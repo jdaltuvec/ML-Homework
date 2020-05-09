@@ -1,8 +1,9 @@
 def prep_data(df):
 
-    df = df.assign(hw=df["Height"] * df["Width"])
+    df = df.assign(hw = df["Height"] * df["Width"] )
+    df = df.assign(all_l = (df["Length1"] * df["Length2"] * df["Length3"])/3 )
 
-    X = df[["Height", "Width", "Length1", "Length2", "Length3", "hw"]].values
+    X = df[["hw", "all_l"]].values
     y = df["Weight"].values
 
     return X, y
