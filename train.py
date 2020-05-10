@@ -17,9 +17,13 @@ X, y = prep_data(df)
 # model.fit(X, y)
 
 ### Random forest ###
-from sklearn.ensemble import RandomForestRegressor
-model = RandomForestRegressor()
+# from sklearn.ensemble import RandomForestRegressor
+# model = RandomForestRegressor()
+# model.fit(X,y)
+
+### GradientBoostingRegressor ###
+from sklearn.ensemble import GradientBoostingRegressor
+model = GradientBoostingRegressor()
 model.fit(X,y)
-# Keeping random forest—it has the best score on the prediction
 
 dump(model, "reg.joblib")
